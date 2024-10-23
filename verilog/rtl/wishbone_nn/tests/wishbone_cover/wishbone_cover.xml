@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2024-09-30T12:14:05" hostname="Bobby" package="wishbone" id="0" name="cover" tests="7" errors="0" failures="0" time="0" skipped="6">
+<properties>
+<property name="os" value="Linux"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="PASS"/>
+</properties>
+<testcase classname="cover" name="build execution" time="0">
+</testcase>
+<testcase classname="cover" name="Property ASSERT in wishbone_nn at top_level.sv:49.17-49.123" time="0" type="ASSERT" location="top_level.sv:49.17-49.123" id="a_ack_only_when_addr">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in wishbone_nn at top_level.sv:48.17-48.92" time="0" type="ASSERT" location="top_level.sv:48.17-48.92" id="a_ack_only_when_stb_and_cyc">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in wishbone_nn at top_level.sv:52.17-52.62" time="0" type="ASSERT" location="top_level.sv:52.17-52.62" id="ack_dat_low">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property COVER in wishbone_nn at top_level.sv:47.17-47.44" time="0" type="COVER" location="top_level.sv:47.17-47.44" id="will_ack" tracefile="engine_0/trace0.vcd">
+</testcase>
+<testcase classname="cover" name="Property ASSERT in wishbone_nn/fifo_in at input_fifo.sv:52.13-52.59" time="0" type="ASSERT" location="input_fifo.sv:52.13-52.59" id="count_bound">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in wishbone_nn/fifo_in at input_fifo.sv:53.13-53.68" time="0" type="ASSERT" location="input_fifo.sv:53.13-53.68" id="r_addr_bound">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in wishbone_nn/fifo_in at input_fifo.sv:54.13-54.70" time="0" type="ASSERT" location="input_fifo.sv:54.13-54.70" id="w_addr_bound">
+<skipped />
+</testcase>
+<system-out>SBY 12:14:05 [wishbone_cover] Removing directory '/home/jelmer/Documents/stage/efabless/caravel_user_project/verilog/rtl/wishbone_nn/tests/wishbone_cover'.
+SBY 12:14:05 [wishbone_cover] Copy '/home/jelmer/Documents/stage/efabless/caravel_user_project/verilog/rtl/wishbone_nn/top_level.sv' to '/home/jelmer/Documents/stage/efabless/caravel_user_project/verilog/rtl/wishbone_nn/tests/wishbone_cover/src/top_level.sv'.
+SBY 12:14:05 [wishbone_cover] Copy '/home/jelmer/Documents/stage/efabless/caravel_user_project/verilog/rtl/wishbone_nn/input_fifo.sv' to '/home/jelmer/Documents/stage/efabless/caravel_user_project/verilog/rtl/wishbone_nn/tests/wishbone_cover/src/input_fifo.sv'.
+SBY 12:14:05 [wishbone_cover] engine_0: smtbmc boolector
+SBY 12:14:05 [wishbone_cover] base: starting process &quot;cd wishbone_cover/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 12:14:05 [wishbone_cover] base: finished (returncode=0)
+SBY 12:14:05 [wishbone_cover] prep: starting process &quot;cd wishbone_cover/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY 12:14:05 [wishbone_cover] prep: finished (returncode=0)
+SBY 12:14:05 [wishbone_cover] smt2: starting process &quot;cd wishbone_cover/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 12:14:05 [wishbone_cover] smt2: finished (returncode=0)
+SBY 12:14:05 [wishbone_cover] engine_0: starting process &quot;cd wishbone_cover; yosys-smtbmc -s boolector --presat --unroll -c --noprogress -t 20  --append 0 --dump-vcd engine_0/trace%.vcd --dump-yw engine_0/trace%.yw --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2&quot;
+SBY 12:14:05 [wishbone_cover] engine_0: ##   0:00:00  Solver: boolector
+SBY 12:14:05 [wishbone_cover] engine_0: ##   0:00:00  Checking cover reachability in step 0..
+SBY 12:14:05 [wishbone_cover] engine_0: ##   0:00:00  Checking cover reachability in step 1..
+SBY 12:14:05 [wishbone_cover] engine_0: ##   0:00:00  Reached cover statement at will_ack in step 1.
+SBY 12:14:05 [wishbone_cover] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace0.vcd
+SBY 12:14:05 [wishbone_cover] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace0_tb.v
+SBY 12:14:05 [wishbone_cover] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace0.smtc
+SBY 12:14:05 [wishbone_cover] engine_0: ##   0:00:00  Writing trace to Yosys witness file: engine_0/trace0.yw
+SBY 12:14:05 [wishbone_cover] engine_0: ##   0:00:00  Status: passed
+SBY 12:14:05 [wishbone_cover] engine_0: finished (returncode=0)
+SBY 12:14:05 [wishbone_cover] engine_0: Status returned by engine: pass
+SBY 12:14:05 [wishbone_cover] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 12:14:05 [wishbone_cover] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 12:14:05 [wishbone_cover] summary: engine_0 (smtbmc boolector) returned pass
+SBY 12:14:05 [wishbone_cover] summary: cover trace: wishbone_cover/engine_0/trace0.vcd
+SBY 12:14:05 [wishbone_cover] summary:   reached cover statement wishbone_nn.will_ack at top_level.sv:47.17-47.44 in step 1
+SBY 12:14:05 [wishbone_cover] DONE (PASS, rc=0)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

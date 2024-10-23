@@ -1,0 +1,15 @@
+[options]
+mode prove
+
+[engines]
+smtbmc boolector
+
+[script]
+read -define NO_FULL_SKIP=1
+read -formal top_level.sv
+read -formal input_fifo.sv
+prep -top wishbone_nn
+
+[files]
+../top_level.sv
+../input_fifo.sv

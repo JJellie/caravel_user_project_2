@@ -1,0 +1,9 @@
+CARAVEL_ROOT: /home/jelmer/Documents/stage/efabless/caravel_user_project/caravel
+MCW_ROOT: /home/jelmer/Documents/stage/efabless/caravel_user_project/mgmt_core_wrapper
+PDK: sky130A
+PDK_ROOT: /home/jelmer/asic/pdk
+USER_PROJECT_ROOT: /home/jelmer/Documents/stage/efabless/caravel_user_project
+caravan: false
+clk: 25
+emailto:
+- null

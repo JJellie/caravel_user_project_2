@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2024-09-30T12:38:16" hostname="Bobby" package="fifo" id="0" name="nofullskip" tests="6" errors="0" failures="0" time="0" skipped="0">
+<properties>
+<property name="os" value="Linux"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="PASS"/>
+</properties>
+<testcase classname="nofullskip" name="build execution" time="0">
+</testcase>
+<testcase classname="nofullskip" name="Property ASSERT in fifo_buffer at input_fifo.sv:58.13-58.59" time="0" type="ASSERT" location="input_fifo.sv:58.13-58.59" id="count_bound">
+</testcase>
+<testcase classname="nofullskip" name="Property ASSERT in fifo_buffer at input_fifo.sv:62.13-62.128" time="0" type="ASSERT" location="input_fifo.sv:62.13-62.128" id="count_change">
+</testcase>
+<testcase classname="nofullskip" name="Property ASSERT in fifo_buffer at input_fifo.sv:59.13-59.68" time="0" type="ASSERT" location="input_fifo.sv:59.13-59.68" id="r_addr_bound">
+</testcase>
+<testcase classname="nofullskip" name="Property ASSERT in fifo_buffer at input_fifo.sv:63.13-63.123" time="0" type="ASSERT" location="input_fifo.sv:63.13-63.123" id="read_addr_change">
+</testcase>
+<testcase classname="nofullskip" name="Property ASSERT in fifo_buffer at input_fifo.sv:60.13-60.70" time="0" type="ASSERT" location="input_fifo.sv:60.13-60.70" id="w_addr_bound">
+</testcase>
+<testcase classname="nofullskip" name="Property ASSERT in fifo_buffer at input_fifo.sv:64.13-64.129" time="0" type="ASSERT" location="input_fifo.sv:64.13-64.129" id="write_addr_change">
+</testcase>
+<system-out>SBY 12:38:16 [fifo_nofullskip] Removing directory '/home/jelmer/Documents/stage/efabless/caravel_user_project/verilog/rtl/wishbone_nn/tests/fifo_nofullskip'.
+SBY 12:38:16 [fifo_nofullskip] Copy '/home/jelmer/Documents/stage/efabless/caravel_user_project/verilog/rtl/wishbone_nn/input_fifo.sv' to '/home/jelmer/Documents/stage/efabless/caravel_user_project/verilog/rtl/wishbone_nn/tests/fifo_nofullskip/src/input_fifo.sv'.
+SBY 12:38:16 [fifo_nofullskip] engine_0: smtbmc boolector
+SBY 12:38:16 [fifo_nofullskip] base: starting process &quot;cd fifo_nofullskip/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 12:38:16 [fifo_nofullskip] base: finished (returncode=0)
+SBY 12:38:16 [fifo_nofullskip] prep: starting process &quot;cd fifo_nofullskip/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY 12:38:16 [fifo_nofullskip] prep: finished (returncode=0)
+SBY 12:38:16 [fifo_nofullskip] smt2: starting process &quot;cd fifo_nofullskip/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 12:38:16 [fifo_nofullskip] smt2: finished (returncode=0)
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: starting process &quot;cd fifo_nofullskip; yosys-smtbmc -s boolector --presat --unroll --noprogress -t 20  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY 12:38:16 [fifo_nofullskip] engine_0.induction: starting process &quot;cd fifo_nofullskip; yosys-smtbmc -s boolector --presat --unroll -i --noprogress -t 20  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-yw engine_0/trace_induct.yw --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2&quot;
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Solver: boolector
+SBY 12:38:16 [fifo_nofullskip] engine_0.induction: ##   0:00:00  Solver: boolector
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 12:38:16 [fifo_nofullskip] engine_0.induction: ##   0:00:00  Trying induction in step 20..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 12:38:16 [fifo_nofullskip] engine_0.induction: ##   0:00:00  Trying induction in step 19..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
+SBY 12:38:16 [fifo_nofullskip] engine_0.induction: ##   0:00:00  Trying induction in step 18..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
+SBY 12:38:16 [fifo_nofullskip] engine_0.induction: ##   0:00:00  Temporal induction successful.
+SBY 12:38:16 [fifo_nofullskip] engine_0.induction: ##   0:00:00  Status: passed
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
+SBY 12:38:16 [fifo_nofullskip] engine_0.induction: finished (returncode=0)
+SBY 12:38:16 [fifo_nofullskip] engine_0.induction: Status returned by engine for induction: pass
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 5..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 5..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 6..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 6..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 7..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 7..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 8..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 8..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 9..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 9..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 10..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 10..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 11..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 11..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 12..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 12..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 13..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 13..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 14..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 14..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 15..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 15..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 16..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 16..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 17..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 17..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 18..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 18..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 19..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 19..
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: ##   0:00:00  Status: passed
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: finished (returncode=0)
+SBY 12:38:16 [fifo_nofullskip] engine_0.basecase: Status returned by engine for basecase: pass
+SBY 12:38:16 [fifo_nofullskip] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 12:38:16 [fifo_nofullskip] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 12:38:16 [fifo_nofullskip] summary: engine_0 (smtbmc boolector) returned pass for basecase
+SBY 12:38:16 [fifo_nofullskip] summary: engine_0 (smtbmc boolector) returned pass for induction
+SBY 12:38:16 [fifo_nofullskip] summary: engine_0 did not produce any traces
+SBY 12:38:16 [fifo_nofullskip] summary: successful proof by k-induction.
+SBY 12:38:16 [fifo_nofullskip] DONE (PASS, rc=0)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

@@ -1,0 +1,20 @@
+SBY 12:34:49 [fifo_basic] Removing directory '/home/jelmer/Documents/stage/efabless/caravel_user_project/verilog/rtl/wishbone_nn/tests/fifo_basic'.
+SBY 12:34:49 [fifo_cover] Removing directory '/home/jelmer/Documents/stage/efabless/caravel_user_project/verilog/rtl/wishbone_nn/tests/fifo_cover'.
+SBY 12:34:49 [fifo_cover] Copy '/home/jelmer/Documents/stage/efabless/caravel_user_project/verilog/rtl/wishbone_nn/input_fifo.sv' to '/home/jelmer/Documents/stage/efabless/caravel_user_project/verilog/rtl/wishbone_nn/tests/fifo_cover/src/input_fifo.sv'.
+SBY 12:34:49 [fifo_cover] engine_0: smtbmc boolector
+SBY 12:34:49 [fifo_cover] base: starting process "cd fifo_cover/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 12:34:49 [fifo_cover] base: finished (returncode=0)
+SBY 12:34:49 [fifo_cover] prep: starting process "cd fifo_cover/model; yosys -ql design_prep.log design_prep.ys"
+SBY 12:34:49 [fifo_cover] prep: finished (returncode=0)
+SBY 12:34:49 [fifo_cover] smt2: starting process "cd fifo_cover/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 12:34:49 [fifo_cover] smt2: finished (returncode=0)
+SBY 12:34:49 [fifo_cover] engine_0: starting process "cd fifo_cover; yosys-smtbmc -s boolector --presat --unroll -c --noprogress -t 20  --append 0 --dump-vcd engine_0/trace%.vcd --dump-yw engine_0/trace%.yw --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2"
+SBY 12:34:49 [fifo_cover] engine_0: ##   0:00:00  Solver: boolector
+SBY 12:34:49 [fifo_cover] engine_0: ##   0:00:00  Status: passed
+SBY 12:34:49 [fifo_cover] engine_0: finished (returncode=0)
+SBY 12:34:49 [fifo_cover] engine_0: Status returned by engine: pass
+SBY 12:34:49 [fifo_cover] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 12:34:49 [fifo_cover] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 12:34:49 [fifo_cover] summary: engine_0 (smtbmc boolector) returned pass
+SBY 12:34:49 [fifo_cover] summary: engine_0 did not produce any traces
+SBY 12:34:49 [fifo_cover] DONE (PASS, rc=0)

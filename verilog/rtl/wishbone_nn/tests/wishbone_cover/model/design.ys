@@ -1,0 +1,9 @@
+# running in wishbone_cover/src/
+read -formal top_level.sv
+read -formal input_fifo.sv
+prep -top wishbone_nn
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

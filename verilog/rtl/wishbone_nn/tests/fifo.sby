@@ -1,0 +1,29 @@
+[tasks]
+basic bmc
+nofullskip prove
+cover
+noverific cover
+basic cover : default
+
+[options]
+bmc: 
+mode bmc
+--
+prove:
+mode prove
+--
+cover:
+mode cover
+--
+
+[engines]
+smtbmc boolector
+
+[script]
+nofullskip: read -define NO_FULL_SKIP=1
+noverific: read -noverific
+read -formal input_fifo.sv
+prep -top fifo_buffer
+
+[files]
+../input_fifo.sv

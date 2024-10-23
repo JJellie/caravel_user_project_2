@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2024-09-30T12:14:00" hostname="Bobby" package="wishbone" id="0" name="nofullskip" tests="7" errors="0" failures="0" time="0" skipped="1">
+<properties>
+<property name="os" value="Linux"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="PASS"/>
+</properties>
+<testcase classname="nofullskip" name="build execution" time="0">
+</testcase>
+<testcase classname="nofullskip" name="Property ASSERT in wishbone_nn at top_level.sv:49.17-49.123" time="0" type="ASSERT" location="top_level.sv:49.17-49.123" id="a_ack_only_when_addr">
+</testcase>
+<testcase classname="nofullskip" name="Property ASSERT in wishbone_nn at top_level.sv:48.17-48.92" time="0" type="ASSERT" location="top_level.sv:48.17-48.92" id="a_ack_only_when_stb_and_cyc">
+</testcase>
+<testcase classname="nofullskip" name="Property ASSERT in wishbone_nn at top_level.sv:52.17-52.62" time="0" type="ASSERT" location="top_level.sv:52.17-52.62" id="ack_dat_low">
+</testcase>
+<testcase classname="nofullskip" name="Property COVER in wishbone_nn at top_level.sv:47.17-47.44" time="0" type="COVER" location="top_level.sv:47.17-47.44" id="will_ack">
+<skipped />
+</testcase>
+<testcase classname="nofullskip" name="Property ASSERT in wishbone_nn/fifo_in at input_fifo.sv:52.13-52.59" time="0" type="ASSERT" location="input_fifo.sv:52.13-52.59" id="count_bound">
+</testcase>
+<testcase classname="nofullskip" name="Property ASSERT in wishbone_nn/fifo_in at input_fifo.sv:53.13-53.68" time="0" type="ASSERT" location="input_fifo.sv:53.13-53.68" id="r_addr_bound">
+</testcase>
+<testcase classname="nofullskip" name="Property ASSERT in wishbone_nn/fifo_in at input_fifo.sv:54.13-54.70" time="0" type="ASSERT" location="input_fifo.sv:54.13-54.70" id="w_addr_bound">
+</testcase>
+<system-out>SBY 12:14:00 [wishbone_nofullskip] Removing directory '/home/jelmer/Documents/stage/efabless/caravel_user_project/verilog/rtl/wishbone_nn/tests/wishbone_nofullskip'.
+SBY 12:14:00 [wishbone_nofullskip] Copy '/home/jelmer/Documents/stage/efabless/caravel_user_project/verilog/rtl/wishbone_nn/top_level.sv' to '/home/jelmer/Documents/stage/efabless/caravel_user_project/verilog/rtl/wishbone_nn/tests/wishbone_nofullskip/src/top_level.sv'.
+SBY 12:14:00 [wishbone_nofullskip] Copy '/home/jelmer/Documents/stage/efabless/caravel_user_project/verilog/rtl/wishbone_nn/input_fifo.sv' to '/home/jelmer/Documents/stage/efabless/caravel_user_project/verilog/rtl/wishbone_nn/tests/wishbone_nofullskip/src/input_fifo.sv'.
+SBY 12:14:00 [wishbone_nofullskip] engine_0: smtbmc boolector
+SBY 12:14:00 [wishbone_nofullskip] base: starting process &quot;cd wishbone_nofullskip/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 12:14:00 [wishbone_nofullskip] base: finished (returncode=0)
+SBY 12:14:00 [wishbone_nofullskip] prep: starting process &quot;cd wishbone_nofullskip/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY 12:14:00 [wishbone_nofullskip] prep: finished (returncode=0)
+SBY 12:14:00 [wishbone_nofullskip] smt2: starting process &quot;cd wishbone_nofullskip/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 12:14:00 [wishbone_nofullskip] smt2: finished (returncode=0)
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: starting process &quot;cd wishbone_nofullskip; yosys-smtbmc -s boolector --presat --unroll --noprogress -t 20  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY 12:14:00 [wishbone_nofullskip] engine_0.induction: starting process &quot;cd wishbone_nofullskip; yosys-smtbmc -s boolector --presat --unroll -i --noprogress -t 20  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-yw engine_0/trace_induct.yw --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2&quot;
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Solver: boolector
+SBY 12:14:00 [wishbone_nofullskip] engine_0.induction: ##   0:00:00  Solver: boolector
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.induction: ##   0:00:00  Trying induction in step 20..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.induction: ##   0:00:00  Trying induction in step 19..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.induction: ##   0:00:00  Temporal induction successful.
+SBY 12:14:00 [wishbone_nofullskip] engine_0.induction: ##   0:00:00  Status: passed
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.induction: finished (returncode=0)
+SBY 12:14:00 [wishbone_nofullskip] engine_0.induction: Status returned by engine for induction: pass
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 5..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 5..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 6..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 6..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 7..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 7..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 8..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 8..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 9..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 9..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 10..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 10..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 11..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 11..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 12..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 12..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 13..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 13..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 14..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 14..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 15..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 15..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 16..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 16..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 17..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 17..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 18..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 18..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assumptions in step 19..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Checking assertions in step 19..
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: ##   0:00:00  Status: passed
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: finished (returncode=0)
+SBY 12:14:00 [wishbone_nofullskip] engine_0.basecase: Status returned by engine for basecase: pass
+SBY 12:14:00 [wishbone_nofullskip] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 12:14:00 [wishbone_nofullskip] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 12:14:00 [wishbone_nofullskip] summary: engine_0 (smtbmc boolector) returned pass for basecase
+SBY 12:14:00 [wishbone_nofullskip] summary: engine_0 (smtbmc boolector) returned pass for induction
+SBY 12:14:00 [wishbone_nofullskip] summary: engine_0 did not produce any traces
+SBY 12:14:00 [wishbone_nofullskip] summary: successful proof by k-induction.
+SBY 12:14:00 [wishbone_nofullskip] DONE (PASS, rc=0)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

@@ -1,0 +1,12 @@
+[options]
+mode bmc
+
+[engines]
+smtbmc boolector
+
+[script]
+read -formal input_fifo.sv
+prep -top fifo_buffer
+
+[files]
+../input_fifo.sv

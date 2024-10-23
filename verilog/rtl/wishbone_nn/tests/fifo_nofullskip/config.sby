@@ -1,0 +1,13 @@
+[options]
+mode prove
+
+[engines]
+smtbmc boolector
+
+[script]
+read -define NO_FULL_SKIP=1
+read -formal input_fifo.sv
+prep -top fifo_buffer
+
+[files]
+../input_fifo.sv

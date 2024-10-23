@@ -1,0 +1,314 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.45+139 (git sha1 4d581a97d, clang++ 14.0.0-1ubuntu1.1 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: input_fifo.sv
+Parsing formal SystemVerilog input from `input_fifo.sv' to AST representation.
+Storing AST representation for module `$abstract\fifo_buffer'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\fifo_buffer'.
+Generating RTLIL representation for module `\fifo_buffer'.
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \fifo_buffer
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \fifo_buffer
+Removing unused module `$abstract\fifo_buffer'.
+Removed 1 unused modules.
+Module fifo_buffer directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $proc$input_fifo.sv:23$9 in module fifo_buffer.
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 9 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\fifo_buffer.$proc$input_fifo.sv:0$58'.
+  Set init value: \count = 3'000
+Found init rule in `\fifo_buffer.$proc$input_fifo.sv:16$57'.
+  Set init value: \read_addr = 3'000
+Found init rule in `\fifo_buffer.$proc$input_fifo.sv:16$56'.
+  Set init value: \write_addr = 3'000
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~7 debug messages>
+
+2.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\fifo_buffer.$proc$input_fifo.sv:0$58'.
+Creating decoders for process `\fifo_buffer.$proc$input_fifo.sv:16$57'.
+Creating decoders for process `\fifo_buffer.$proc$input_fifo.sv:16$56'.
+Creating decoders for process `\fifo_buffer.$proc$input_fifo.sv:52$33'.
+     1/4: \count_change_EN
+     2/4: \w_addr_bound_EN
+     3/4: \r_addr_bound_EN
+     4/4: \count_bound_EN
+Creating decoders for process `\fifo_buffer.$proc$input_fifo.sv:23$9'.
+     1/12: $3$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$23
+     2/12: $3$memwr$\FIFO$input_fifo.sv:31$4_DATA[31:0]$22
+     3/12: $3$memwr$\FIFO$input_fifo.sv:31$4_ADDR[2:0]$21
+     4/12: $2$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$18
+     5/12: $2$memwr$\FIFO$input_fifo.sv:31$4_DATA[31:0]$17
+     6/12: $2$memwr$\FIFO$input_fifo.sv:31$4_ADDR[2:0]$16
+     7/12: $1$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$15
+     8/12: $1$memwr$\FIFO$input_fifo.sv:31$4_DATA[31:0]$14
+     9/12: $1$memwr$\FIFO$input_fifo.sv:31$4_ADDR[2:0]$13
+    10/12: $0\read_addr[2:0]
+    11/12: $0\write_addr[2:0]
+    12/12: $0\count[2:0]
+
+2.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\fifo_buffer.$past$input_fifo.sv:58$1$0' using process `\fifo_buffer.$proc$input_fifo.sv:52$33'.
+  created $dff cell `$procdff$156' with positive edge clock.
+Creating register for signal `\fifo_buffer.$past$input_fifo.sv:58$2$0' using process `\fifo_buffer.$proc$input_fifo.sv:52$33'.
+  created $dff cell `$procdff$157' with positive edge clock.
+Creating register for signal `\fifo_buffer.$past$input_fifo.sv:58$3$0' using process `\fifo_buffer.$proc$input_fifo.sv:52$33'.
+  created $dff cell `$procdff$158' with positive edge clock.
+Creating register for signal `\fifo_buffer.\count' using process `\fifo_buffer.$proc$input_fifo.sv:23$9'.
+  created $dff cell `$procdff$159' with positive edge clock.
+Creating register for signal `\fifo_buffer.\write_addr' using process `\fifo_buffer.$proc$input_fifo.sv:23$9'.
+  created $dff cell `$procdff$160' with positive edge clock.
+Creating register for signal `\fifo_buffer.\read_addr' using process `\fifo_buffer.$proc$input_fifo.sv:23$9'.
+  created $dff cell `$procdff$161' with positive edge clock.
+Creating register for signal `\fifo_buffer.$memwr$\FIFO$input_fifo.sv:31$4_ADDR' using process `\fifo_buffer.$proc$input_fifo.sv:23$9'.
+  created $dff cell `$procdff$162' with positive edge clock.
+Creating register for signal `\fifo_buffer.$memwr$\FIFO$input_fifo.sv:31$4_DATA' using process `\fifo_buffer.$proc$input_fifo.sv:23$9'.
+  created $dff cell `$procdff$163' with positive edge clock.
+Creating register for signal `\fifo_buffer.$memwr$\FIFO$input_fifo.sv:31$4_EN' using process `\fifo_buffer.$proc$input_fifo.sv:23$9'.
+  created $dff cell `$procdff$164' with positive edge clock.
+
+2.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `fifo_buffer.$proc$input_fifo.sv:0$58'.
+Removing empty process `fifo_buffer.$proc$input_fifo.sv:16$57'.
+Removing empty process `fifo_buffer.$proc$input_fifo.sv:16$56'.
+Found and cleaned up 1 empty switch in `\fifo_buffer.$proc$input_fifo.sv:52$33'.
+Removing empty process `fifo_buffer.$proc$input_fifo.sv:52$33'.
+Found and cleaned up 6 empty switches in `\fifo_buffer.$proc$input_fifo.sv:23$9'.
+Removing empty process `fifo_buffer.$proc$input_fifo.sv:23$9'.
+Cleaned up 7 empty switches.
+
+2.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo_buffer.
+<suppressed ~11 debug messages>
+
+2.4. Executing FUTURE pass.
+
+2.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo_buffer.
+
+2.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \fifo_buffer..
+Removed 4 unused cells and 71 unused wires.
+<suppressed ~5 debug messages>
+
+2.7. Executing CHECK pass (checking for obvious problems).
+Checking module fifo_buffer...
+Found and reported 0 problems.
+
+2.8. Executing OPT pass (performing simple optimizations).
+
+2.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo_buffer.
+
+2.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\fifo_buffer'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+2.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \fifo_buffer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$104.
+    dead port 1/2 on $mux $procmux$110.
+    dead port 2/2 on $mux $procmux$71.
+    dead port 1/2 on $mux $procmux$74.
+    dead port 2/2 on $mux $procmux$80.
+    dead port 1/2 on $mux $procmux$83.
+    dead port 2/2 on $mux $procmux$89.
+    dead port 1/2 on $mux $procmux$92.
+    dead port 1/2 on $mux $procmux$98.
+Removed 9 multiplexer ports.
+<suppressed ~11 debug messages>
+
+2.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \fifo_buffer.
+    Consolidated identical input bits for $mux cell $procmux$69:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$69_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$69_Y [0]
+      New connections: $procmux$69_Y [31:1] = { $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] $procmux$69_Y [0] }
+  Optimizing cells in module \fifo_buffer.
+    Consolidated identical input bits for $mux cell $procmux$95:
+      Old ports: A=0, B=$3$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$23, Y=$procmux$95_Y
+      New ports: A=1'0, B=$procmux$69_Y [0], Y=$procmux$95_Y [0]
+      New connections: $procmux$95_Y [31:1] = { $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] $procmux$95_Y [0] }
+  Optimizing cells in module \fifo_buffer.
+    Consolidated identical input bits for $mux cell $procmux$113:
+      Old ports: A=$2$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$18, B=0, Y=$0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12
+      New ports: A=$procmux$95_Y [0], B=1'0, Y=$0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0]
+      New connections: $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [31:1] = { $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] $0$memwr$\FIFO$input_fifo.sv:31$4_EN[31:0]$12 [0] }
+  Optimizing cells in module \fifo_buffer.
+Performed a total of 3 changes.
+
+2.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\fifo_buffer'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+2.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \fifo_buffer..
+Removed 0 unused cells and 10 unused wires.
+<suppressed ~1 debug messages>
+
+2.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo_buffer.
+
+2.8.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.8.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \fifo_buffer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+2.8.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \fifo_buffer.
+Performed a total of 0 changes.
+
+2.8.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\fifo_buffer'.
+Removed a total of 0 cells.
+
+2.8.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \fifo_buffer..
+
+2.8.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo_buffer.
+
+2.8.14. Finished OPT passes. (There is nothing left to do.)
+
+2.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 28 bits (of 32) from port B of cell fifo_buffer.$le$input_fifo.sv:30$19 ($le).
+Removed top 31 bits (of 32) from port B of cell fifo_buffer.$add$input_fifo.sv:32$24 ($add).
+Removed top 29 bits (of 32) from port Y of cell fifo_buffer.$add$input_fifo.sv:32$24 ($add).
+Removed top 31 bits (of 32) from port B of cell fifo_buffer.$add$input_fifo.sv:33$25 ($add).
+Removed top 29 bits (of 32) from port Y of cell fifo_buffer.$add$input_fifo.sv:33$25 ($add).
+Removed top 31 bits (of 32) from port B of cell fifo_buffer.$gt$input_fifo.sv:35$27 ($gt).
+Removed top 31 bits (of 32) from port B of cell fifo_buffer.$add$input_fifo.sv:36$29 ($add).
+Removed top 29 bits (of 32) from port Y of cell fifo_buffer.$add$input_fifo.sv:36$29 ($add).
+Removed top 31 bits (of 32) from port B of cell fifo_buffer.$sub$input_fifo.sv:37$30 ($sub).
+Removed top 29 bits (of 32) from port Y of cell fifo_buffer.$sub$input_fifo.sv:37$30 ($sub).
+Removed top 31 bits (of 32) from port B of cell fifo_buffer.$ge$input_fifo.sv:54$39 ($ge).
+Removed top 31 bits (of 32) from port B of cell fifo_buffer.$ge$input_fifo.sv:55$41 ($ge).
+Removed top 29 bits (of 32) from port B of cell fifo_buffer.$le$input_fifo.sv:55$42 ($le).
+Removed top 31 bits (of 32) from port B of cell fifo_buffer.$ge$input_fifo.sv:56$44 ($ge).
+Removed top 29 bits (of 32) from port B of cell fifo_buffer.$le$input_fifo.sv:56$45 ($le).
+Removed top 31 bits (of 32) from port B of cell fifo_buffer.$add$input_fifo.sv:58$50 ($add).
+Removed top 28 bits (of 32) from port Y of cell fifo_buffer.$add$input_fifo.sv:58$50 ($add).
+Removed top 28 bits (of 32) from port B of cell fifo_buffer.$eq$input_fifo.sv:58$51 ($eq).
+Removed top 31 bits (of 32) from port B of cell fifo_buffer.$sub$input_fifo.sv:58$53 ($sub).
+Removed top 28 bits (of 32) from port Y of cell fifo_buffer.$sub$input_fifo.sv:58$53 ($sub).
+Removed top 29 bits (of 32) from wire fifo_buffer.$add$input_fifo.sv:32$24_Y.
+Removed top 29 bits (of 32) from wire fifo_buffer.$add$input_fifo.sv:36$29_Y.
+Removed top 28 bits (of 32) from wire fifo_buffer.$add$input_fifo.sv:58$50_Y.
+
+2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \fifo_buffer..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+2.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.12. Executing OPT pass (performing simple optimizations).
+
+2.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo_buffer.
+
+2.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\fifo_buffer'.
+Removed a total of 0 cells.
+
+2.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \fifo_buffer..
+
+2.12.4. Finished fast OPT passes.
+
+2.13. Printing statistics.
+
+=== fifo_buffer ===
+
+   Number of wires:                 64
+   Number of wire bits:            483
+   Number of public wires:          14
+   Number of public wire bits:      82
+   Number of ports:                  7
+   Number of port bits:             69
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 59
+     $add                            4
+     $check                          4
+     $dff                            6
+     $eq                             3
+     $ge                             3
+     $gt                             1
+     $le                             3
+     $logic_and                      5
+     $logic_not                      2
+     $logic_or                       3
+     $mem_v2                         1
+     $mux                           22
+     $sub                            2
+
+2.14. Executing CHECK pass (checking for obvious problems).
+Checking module fifo_buffer...
+Found and reported 0 problems.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \fifo_buffer
+
+3.2. Analyzing design hierarchy..
+Top module:  \fifo_buffer
+Removed 0 unused modules.
+Module fifo_buffer directly or indirectly contains formal properties -> setting "keep" attribute.
+
+4. Executing jny backend.
+
+5. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 27d72793ab, CPU: user 0.02s system 0.00s, MEM: 14.61 MB peak
+Yosys 0.45+139 (git sha1 4d581a97d, clang++ 14.0.0-1ubuntu1.1 -fPIC -O3)
+Time spent: 24% 5x opt_clean (0 sec), 18% 6x opt_expr (0 sec), ...

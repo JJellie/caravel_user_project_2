@@ -1,0 +1,29 @@
+{
+  "format": "Yosys Witness Trace",
+  "generator": "smtbmc",
+  "clocks": [
+    {"path": ["\\wb_clk_i"], "edge": "posedge", "offset": 0}
+  ],
+  "signals": [
+    {"path": ["\\fifo_in", "\\_witness_", "\\anyseq_auto_setundef_cc_533_execute_301"], "width": 32, "offset": 0, "init_only": false},
+    {"path": ["\\fifo_in", "\\_witness_", "\\anyseq_auto_setundef_cc_533_execute_303"], "width": 3, "offset": 0, "init_only": false},
+    {"path": ["\\fifo_in", "\\_witness_", "\\anyseq_auto_setundef_cc_533_execute_305"], "width": 32, "offset": 0, "init_only": false},
+    {"path": ["\\fifo_in", "\\_witness_", "\\anyseq_auto_setundef_cc_533_execute_307"], "width": 3, "offset": 0, "init_only": false},
+    {"path": ["\\fifo_in", "\\_witness_", "\\anyseq_auto_setundef_cc_533_execute_309"], "width": 32, "offset": 0, "init_only": false},
+    {"path": ["\\fifo_in", "\\_witness_", "\\anyseq_auto_setundef_cc_533_execute_311"], "width": 3, "offset": 0, "init_only": false},
+    {"path": ["\\wb_clk_i"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\wb_rst_i"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\wbs_adr_i"], "width": 32, "offset": 0, "init_only": false},
+    {"path": ["\\wbs_cyc_i"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\wbs_dat_i"], "width": 32, "offset": 0, "init_only": false},
+    {"path": ["\\wbs_sel_i"], "width": 4, "offset": 0, "init_only": false},
+    {"path": ["\\wbs_stb_i"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\wbs_we_i"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\fifo_in", "\\FIFO", "\\[0]"], "width": 32, "offset": 0, "init_only": true},
+    {"path": ["\\fifo_in", "\\count"], "width": 3, "offset": 0, "init_only": true}
+  ],
+  "steps": [
+    {"bits": "000000000000000000000000000000000000100000000000000000000000000000000000010011000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"},
+    {"bits": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"}
+  ]
+}
